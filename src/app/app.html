@@ -1,0 +1,15 @@
+<ion-menu [content]="mainContent">
+  <ion-content id="side-menu21">
+    <ion-list id="status-list">
+      <ion-item *ngFor="let status of statusList"
+        color="energized" menuClose="" on-click="changeUserStatus(status)" id="status-list-item1">
+        <ion-thumbnail item-left>
+          <img [src]="status.imgSrc"/>
+        </ion-thumbnail>
+        <h2>{{status.name}}</h2>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

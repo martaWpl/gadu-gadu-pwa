@@ -1,0 +1,11 @@
+#status-list {
+  background: black;
+  .item-md ion-thumbnail {
+    min-width: 40px;
+    img {
+      width: auto;
+      height: 30px;
+      margin-top: 24px;
+    }
+  }
+}

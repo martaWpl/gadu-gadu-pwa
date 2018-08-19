@@ -1,0 +1,26 @@
+page-gadu-gadu {
+  ion-navbar.toolbar {
+    background: white;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .toolbar-background-md {
+    border-color: #b2b2b2;
+    background: url(../../assets/img/gg.jpg) no-repeat;
+    background-size: auto 50px;
+    background-position-x: 155px;
+    background-position-y: 7px;
+  }
+  .item-md ion-thumbnail img {
+    height: 20px;
+    width: auto;
+    /* padding-top: 20px !important; */
+    margin-top: 17px;
+  }
+  .item-md ion-thumbnail[item-left] {
+    margin: 0;
+    min-width: 30px;
+  }
+
+}

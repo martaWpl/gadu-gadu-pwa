@@ -1,0 +1,53 @@
+<ion-header id="gg-header">
+  <ion-navbar>
+    <button ion-button color="lightgray" menuToggle outline>
+      <ion-thumbnail item-left>
+        <img [src]="'assets/img/'+user.status+'.png'"/>
+      </ion-thumbnail>
+      {{user.status}}
+      <!--<ion-icon name="menu"></ion-icon>-->
+      <ion-icon name="arrow-round-forward"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1" style="background: rgb(255,175,0);
+background: linear-gradient(90deg, rgba(255,175,0,1) 1%, rgba(227,235,24,0.9923319669664741) 50%, rgba(253,213,12,1) 100%);">
+  <ion-card id="gaduGadu-card21">
+    <ion-list>
+      <ion-item color="energized" id="gaduGadu-list-item10">
+        <ion-avatar item-left>
+          <img [src]="user.imgSrc"/>
+        </ion-avatar>
+        <h2>{{user.name}}</h2>
+        <p>{{user.description}}</p>
+        <button ion-fab icon-only mini item-right color="blue" (click)="openForm()">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-item>
+      <div *ngIf="opened">
+        <ion-item>
+          <ion-label primary>Nowy opis:</ion-label>
+          <ion-input name="newDescription" [(ngModel)]="newDescription"></ion-input>
+        </ion-item>
+        <div class="text-center">
+          <button ion-button small type="submit" color="secondary" (click)="changeDescription()">Zapisz</button>
+        </div>
+      </div>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <ion-list id="gaduGadu-list3">
+      <ion-searchbar placeholder="" name="" id="gaduGadu-search2"></ion-searchbar>
+      <ion-item color="none" id="gaduGadu-list-item5" *ngFor="let friend of users">
+        <ion-avatar item-right>
+          <img [src]="friend.imgSrc"/>
+        </ion-avatar>
+        <ion-thumbnail item-left>
+          <img [src]="'assets/img/'+friend.status+'.png'"/>
+        </ion-thumbnail>
+        <h2>{{friend.name}}</h2>
+        <p>{{friend.description}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
