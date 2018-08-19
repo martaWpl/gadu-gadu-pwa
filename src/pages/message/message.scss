@@ -1,0 +1,10 @@
+page-message {
+  #sendMessage {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 35px);
+  }
+  ion-input.input.input-md {
+    background: lightgrey;
+  }
+}

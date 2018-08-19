@@ -2,7 +2,7 @@
   <ion-content id="side-menu21">
     <ion-list id="status-list">
       <ion-item *ngFor="let status of statusList"
-        color="energized" menuClose="" on-click="changeUserStatus(status)" id="status-list-item1">
+        color="energized" menuClose="" (click)="changeUserStatus(status)" id="status-list-item1">
         <ion-thumbnail item-left>
           <img [src]="status.imgSrc"/>
         </ion-thumbnail>

@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Napisz do {{ friend?.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-right>
+        <img [src]="friend?.imgSrc"/>
+      </ion-avatar>
+    </ion-item>
+    <ion-item *ngFor="let mess of messages">
+      {{mess}}
+    </ion-item>
+  </ion-list>
+  <div id="sendMessage">
+    <ion-label>Napisz wiadomość:</ion-label>
+    <ion-input [(ngModel)]="message" name="message"></ion-input>
+    <div class="text-center">
+      <button ion-button small type="submit" color="secondary" (click)="sendMessage(message)">Wyślij</button>
+    </div>
+  </div>
+</ion-content>

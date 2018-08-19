@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {statusList} from "../../app/app.component";
+import {MessagePage} from "../message/message";
 
 @Component({
   selector: 'page-gadu-gadu',
@@ -59,6 +60,15 @@ export class GaduGaduPage {
     console.log('onPageWillEnter');
   }
 
+  ionViewDidEnter() {
+    let status = this.navParams.get('status');
+    if(status) {
+      console.log(status);
+      this.user.status = status.toLowerCase().replace(' ', '-');
+      console.log(this.user);
+    }
+  }
+
   onViewWillEnter() {
     console.log('onViewWillEnter');
     this.navParams.get('status')
@@ -70,6 +80,10 @@ export class GaduGaduPage {
       console.log(this.user);
       //this.user.status =
     }
+  }
+
+  openMessagePage(friend: { name: string; description: string; imgSrc: string; status: string; nrGG: number }) {
+    this.navCtrl.push(MessagePage,{user: friend} );
   }
 }
 

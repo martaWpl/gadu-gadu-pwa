@@ -38,7 +38,8 @@ background: linear-gradient(90deg, rgba(255,175,0,1) 1%, rgba(227,235,24,0.99233
   <ion-card>
     <ion-list id="gaduGadu-list3">
       <ion-searchbar placeholder="" name="" id="gaduGadu-search2"></ion-searchbar>
-      <ion-item color="none" id="gaduGadu-list-item5" *ngFor="let friend of users">
+      <ion-item color="none" id="gaduGadu-list-item5" *ngFor="let friend of users"
+        (click)="openMessagePage(friend)">
         <ion-avatar item-right>
           <img [src]="friend.imgSrc"/>
         </ion-avatar>
